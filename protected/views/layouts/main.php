@@ -158,6 +158,13 @@
                             <li><?php echo CHtml::link('Coordinate', Yii::app()->request->baseUrl . '/pageset.pdf'); ?></li>
                         </ul>
                     </li>
+                    <li class="dropdown">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><?php echo CHtml::link('Create', ['account/create']); ?></li>
+                            <li><?php echo CHtml::link('Manage', ['account/manage']); ?></li>
+                        </ul>
+                    </li>
                     <?php endif; ?>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">

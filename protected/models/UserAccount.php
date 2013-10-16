@@ -15,6 +15,8 @@ class UserAccount extends ActiveRecord {
     public $created_at;
     public $updated_at;
 
+    public $new_password;
+
     protected $_identity;
 
     const GT = 0; // guest
@@ -41,8 +43,10 @@ class UserAccount extends ActiveRecord {
     public function rules()
     {
         return array(
-            ['username,password,identity,division,realname', 'required', 'on' => 'create,update'],
+            ['password', 'required', 'on' => 'create'],
+            ['username,identity,division,realname', 'required', 'on' => 'create,update'],
             ['username', 'unique', 'on' => 'create,update'],
+            ['new_password', 'length', 'min' => 3, 'on' => 'update'],
             ['username,password', 'required', 'on' => 'login'],
             ['password', 'authenticate', 'on' => 'login'],
             ['username,password,identity,division,realname', 'safe', 'on' => 'manage']

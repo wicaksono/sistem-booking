@@ -88,7 +88,11 @@ class AccountController extends Controller
 
         if(isset($_POST['UserAccount'])) {
             $account->setAttributes($_POST['UserAccount']);
-            $account->password = sha1($account->password);
+
+            if($account->new_password != '') {
+                $account->password = sha1($account->new_password);
+            }
+
             if(!Yii::app()->request->isAjaxRequest && $account->save()) {
                 $this->redirect(['account/manage']);
             }

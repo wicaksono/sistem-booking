@@ -23,6 +23,7 @@
     </div>
 </div>
 
+<?php if($account->isNewRecord): ?>
 <div class="form-group">
     <?php echo $form->label($account, 'password', ['class' => 'col-xs-4 control-label']); ?>
     <div class="col-xs-8">
@@ -30,6 +31,15 @@
         <?php echo $form->error($account, 'password', ['class' => 'help-block']); ?>
     </div>
 </div>
+<?php else: ?>
+<div class="form-group">
+    <?php echo $form->label($account, 'new_password', ['class' => 'col-xs-4 control-label']); ?>
+    <div class="col-xs-8">
+        <?php echo $form->textField($account, 'new_password', ['class' => 'form-control']); ?>
+        <?php echo $form->error($account, 'new_password', ['class' => 'help-block']); ?>
+    </div>
+</div>
+<?php endif; ?>
 
 <div class="form-group">
     <?php echo $form->label($account, 'identity', ['class' => 'col-xs-4 control-label']); ?>
