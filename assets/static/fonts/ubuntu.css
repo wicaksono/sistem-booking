@@ -1,0 +1,14 @@
+/*
+    Document   : opensans
+    Created on : Sep 30, 2013, 5:19:40 PM
+    Author     : Niko Wicaksono <wicaksono@nodews.com>
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+@font-face {
+  font-family: 'Ubuntu Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu Condensed'), local('UbuntuCondensed-Regular'), url(ubuntu.woff) format('woff');
+}

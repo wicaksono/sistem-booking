@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta description="">
-        <meta author="Niko Wicaksono">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="<?php echo Yii::app()->request->baseUrl; ?>/assets/static/fonts/opensans.css" rel="stylesheet" media="screen">
-        <link href="<?php echo Yii::app()->request->baseUrl; ?>/assets/static/css/bootstrap.css" rel="stylesheet" media="screen">
-        <link href="<?php echo Yii::app()->request->baseUrl; ?>/assets/static/css/jquery-ui.css" rel="stylesheet" media="screen">
+        <link href="<?php echo Yii::app()->request->baseUrl; ?>/assets/static/fonts/ubuntu.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo Yii::app()->request->baseUrl; ?>/assets/static/css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo Yii::app()->request->baseUrl; ?>/assets/static/css/jquery-ui.css" rel="stylesheet" type="text/css">
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/assets/static/js/jquery.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/assets/static/js/jquery-ui.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/assets/static/js/hogan.js"></script>
@@ -38,7 +35,7 @@
         <style>
             body {
                 font-family: 'Ubuntu Condensed';
-                font-weight: 300;
+                font-weight: 400;
             }
             .filters input,
             .filters select {
