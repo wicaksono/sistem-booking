@@ -43,7 +43,7 @@
         ),
         'sisko' => array(
             'class' => 'ext.oci8pdo.OciDbConnection', ////192.168.152.171:1521/siorcl
-            'connectionString' => 'oci:dbname=192.168.152.171:1521/siorcl;charset=UTF8',
+            'connectionString' => 'oci:dbname=192.168.152.246:1521/siorcl;charset=UTF8',
             'username' => 'iklan',
             'password' => 'adminiklansi',
             'enableProfiling'  => TRUE

@@ -32,8 +32,9 @@ class MigrateController extends Controller
     {
         set_time_limit(0);
 
+        $saccc = 0;
         $saccs = DataOutsideAccount::model()->findAll();
-        $daccs = CHtml::listData(DataOutsideAccount::model()->findAll(), 'code', 'name');
+        $daccs = CHtml::listData(CommMigrateAccount::model()->findAll(), 'code', 'user_id');
 
         foreach($saccs as $a) {
             if(array_key_exists($a->KOD_AE, $daccs)) continue;
@@ -50,6 +51,9 @@ class MigrateController extends Controller
             $sales->user_id = $user->id;
             $sales->code = $a->KOD_AE;
             $sales->save(false);
+            $saccc++;
         }
+
+        echo $saccc;
     }
 }
