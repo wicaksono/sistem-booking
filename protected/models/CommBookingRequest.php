@@ -74,7 +74,7 @@ class CommBookingRequest extends ActiveRecord {
 
             // relations
             'cb_name' => 'Iklan',
-            'ns_name' => 'Rubrik',
+            'ns_name' => 'Section',
             'ua_username' => 'PIC',
             'sa_username' => 'SIC'
         );

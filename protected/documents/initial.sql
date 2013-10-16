@@ -1,4 +1,4 @@
-USE `bookshit`;
+USE `booking`;
 
 INSERT INTO `user_account` VALUES
 (1, 'NI1879', SHA1('NI1879'), '2012091879', 'NIKO WICAKSONO', 1,  UNIX_TIMESTAMP(), UNIX_TIMESTAMP());
@@ -17,10 +17,3 @@ INSERT INTO `news_section` VALUES
 (3, NULL, 'Ekonomi Bisnis', UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
 (4, NULL, 'Hattrick', UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
 (5, NULL, 'Informasiana', UNIX_TIMESTAMP(), UNIX_TIMESTAMP());
-
--- CHILD SECTION
-INSERT INTO `news_section` VALUES
-(6, 1, 'Sub News 1', UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-(7, 1, 'Sub News 2', UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-(8, 2, 'Sub Life Style 1', UNIX_TIMESTAMP(), UNIX_TIMESTAMP()),
-(9, 2, 'Sub Life Style 2', UNIX_TIMESTAMP(), UNIX_TIMESTAMP());

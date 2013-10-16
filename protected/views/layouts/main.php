@@ -40,6 +40,27 @@
                 font-family: 'Ubuntu Condensed';
                 font-weight: 300;
             }
+            .filters input,
+            .filters select {
+                display: block;
+                width: 100%;
+                height: 24px;
+                padding: 0 2px;
+                font-size: 12px;
+                line-height: 1.428571429;
+                color: #555555;
+                vertical-align: middle;
+                background-color: #ffffff;
+                background-image: none;
+                border: 1px solid #cccccc;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+                transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+            }
+            .form-control {
+                border-radius: 0;
+            }
             .grid-view tbody tr td,
             .grid-view thead tr th {
                 text-align: center;

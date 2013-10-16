@@ -35,7 +35,7 @@ class WebUser extends CWebUser
      * only within the same request and only works when <code>$params=array()</code>.
      * @return boolean whether the operations can be performed by this user.
      */
-    public function checkAccess($operation,$params=array(),$allowCaching=true)
+    public function checkAccess($operation, $params=array(), $allowCaching=true)
     {
         if(empty($this->id))
             return FALSE;

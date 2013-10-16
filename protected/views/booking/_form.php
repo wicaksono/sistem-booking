@@ -7,13 +7,13 @@
 <?php Yii::app()->getClientScript()->registerScript('comm-booking-form', '
 $("#CommBooking_co_id").typeahead({
     name: "company",
-    remote: "/~nix/project/bookshit/index-dev.php?r=company/browse&query=%QUERY",
+    remote: "' . Yii::app()->request->baseUrl . '/index.php/company/browse?query=%QUERY",
     template: "<p>{{name}} – <strong>{{code}}</strong></p>",
     engine: Hogan
 });
 $("#CommBooking_sa_id").typeahead({
     name: "sales",
-    remote: "/~nix/project/bookshit/index-dev.php?r=account/sales&query=%QUERY",
+    remote: "' . Yii::app()->request->baseUrl . '/index.php/account/sales?query=%QUERY",
     template: "<p>{{name}} – <strong>{{code}}</strong></p>",
     engine: Hogan
 });
