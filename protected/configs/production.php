@@ -33,9 +33,9 @@
             'allowAutoLogin' => TRUE,
         ),
         'db' => array(
-            'connectionString' => 'mysql:host=localhost;dbname=bookshit2',
-            'username'         => 'root',
-            'password'         => 'toor',
+            'connectionString' => 'mysql:host=localhost;dbname=booking',
+            'username'         => 'booking',
+            'password'         => 'booking',
             'charset'          => 'utf8',
             'emulatePrepare'   => TRUE,
             'autoCommit'       => TRUE,
