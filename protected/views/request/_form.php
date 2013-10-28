@@ -73,9 +73,17 @@
 <div class="form-group">
     <?php echo $form->label($request, 'publish_at', ['class' => 'col-xs-4 control-label']); ?>
     <div class="col-xs-8">
-        <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+        <?php /*$this->widget('zii.widgets.jui.CJuiDatePicker', array(
             'model' => $request,
             'attribute' => 'publish_at',
+            'htmlOptions' => [
+                'class' => 'form-control'
+            ]
+        ));*/ ?>
+        <?php $this->widget('CMaskedTextField', array(
+            'model' => $request,
+            'attribute' => 'publish_at',
+            'mask' => '9999-99-99',
             'htmlOptions' => [
                 'class' => 'form-control'
             ]

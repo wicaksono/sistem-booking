@@ -89,6 +89,7 @@ class RequestController extends Controller {
     {
         $booking = CommBookingRequest::model()->findByPk($id);
         if(!is_object($booking)) throw new CHttpException('Not Found');
+        if($booking->stat === CommBookingRequest::STAT_DONE) throw new CHttpException('Request yang sudah dicetak tidak dapat dihapus', 403);
 
         CommBookingRequest::model()->deleteByPk($id);
     }

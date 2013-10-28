@@ -20,7 +20,7 @@ class CompanyController extends Controller
             array(
                 'allow',
                 'roles'   => [UserAccount::IT, UserAccount::TF, UserAccount::AI],
-                'actions' => ['browse']
+                'actions' => ['browse', 'detail']
             ),
             array(
                 'allow',
@@ -49,13 +49,23 @@ class CompanyController extends Controller
 
         $result = array();
         foreach($company as $i => $c) {
-            $result[$i]['name'] = $c->name;
-            $result[$i]['code'] = $c->code;
-            $result[$i]['value'] = $c->id;
+            $result[$i]['text'] = $c->name;
+            //$result[$i]['code'] = $c->code;
+            $result[$i]['id'] = $c->id;
         }
 
         header('Content-type: application/json');
         echo json_encode($result);
+    }
+
+    public function actionDetail($id)
+    {
+        $company = CommMigrateCompany::model()->findByPk($id);
+        if(!is_object($company)) $o = ['id' => 0, 'text' => 'Not Found'];
+        else $o = ['id' => $company->id, 'text' => $company->name];
+
+        header('Content-type: application/json');
+        echo json_encode($o);
     }
 
     public function actionManage()

@@ -41,7 +41,15 @@ Yii::app()->getClientScript()->registerScript('comm-booking-request-manage-page'
         ],
         [
             'class' => 'ButtonColumn',
-            'template' => '{update} {delete}'
+            'template' => '{update} {delete}',
+            'buttons' => [
+                'update' => [
+                    'visible' => '$data->stat != CommBooking::STAT_DONE'
+                ],
+                'delete' => [
+                    'visible' => '$data->stat != CommBooking::STAT_DONE'
+                ]
+            ]
         ]
     ]
 ]); ?>

@@ -37,19 +37,15 @@ $(document).on("click", "#comm-booking-request-manage-grid table.items .update-r
             'value' => '$data->cb->name'
         ],
         [
-            'name' => 'ua_username',
-            'value' => '$data->ua->username'
-        ],
-        [
-            'name' => 'sa_username',
-            'value' => '$data->cb->sa->username'
-        ],
-        [
             'name' => 'ns_name',
             'value' => '$data->ns->name'
         ],
         [
             'name' => 'page'
+        ],
+        [
+            'name' => 'sa_username',
+            'value' => '$data->cb->sa->realname'
         ],
         [
             'name' => 'sizex'
@@ -64,13 +60,18 @@ $(document).on("click", "#comm-booking-request-manage-grid table.items .update-r
         ],
         [
             'name' => 'publish_at',
-            'filter' => $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+            'filter' => $this->widget('CMaskedTextField', array(
                 'model' => $request,
                 'attribute' => 'publish_at',
-                'htmlOptions' => array(
-                    'class' => 'datepicker'
-                ),
-            ), TRUE)
+                'mask' => '9999-99-99',
+                'htmlOptions' => [
+                    'class' => 'form-control'
+                ]
+            ), true)
+        ],
+        [
+            'name' => 'ua_username',
+            'value' => '$data->ua->username'
         ],
         [
             'type' => 'raw',

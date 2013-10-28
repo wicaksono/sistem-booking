@@ -2,7 +2,7 @@
 define('YII_DEBUG', TRUE);
 
 defined('APPLICATION_NAME') ||
-    define('APPLICATION_NAME', 'BOOKSHIT-DEV');
+    define('APPLICATION_NAME', 'SINDO Booking Development');
 
 defined('APPLICATION_PATH') ||
     define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/protected'));

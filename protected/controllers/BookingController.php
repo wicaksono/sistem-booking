@@ -68,8 +68,8 @@ class BookingController extends Controller
     public function actionUpdate($id)
     {
         $booking = CommBooking::model()->findByPk($id);
-
         if(is_null($booking)) throw new CHttpException(403, 'Not Found');
+        if($booking->stat == CommBooking::STAT_DONE) $this->redirect(['/booking/manage']);
 
         if(isset($_POST['CommBooking'])) {
             $booking->setAttributes($_POST['CommBooking']);
