@@ -12,9 +12,9 @@
             ),
         ),
         'db' => array(
-            'connectionString' => 'mysql:host=localhost;dbname=bookshit2',
-            'username'         => 'root',
-            'password'         => 'toor',
+            'connectionString' => 'mysql:host=localhost;dbname=booking',
+            'username'         => 'booking',
+            'password'         => 'booking',
             'schemaCachingDuration' => 3600,
             'autoCommit'       => TRUE,
             'enableProfiling'  => TRUE
