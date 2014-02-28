@@ -31,7 +31,7 @@ class CommBookingRequest extends ActiveRecord {
     public $ns_name;
     public $cb_name;
     public $ua_username;
-    public $sa_username;
+    public $sa_realname;
 
     public static function model($className = __CLASS__)
     {
@@ -56,7 +56,7 @@ class CommBookingRequest extends ActiveRecord {
     {
         return array(
             ['ua_id,cb_id,ns_id,page,stat,sizex,sizey,color,publish_at', 'required', 'on' => 'create,update'],
-            ['ua_id,cb_id,ns_id,cb_name,ns_name,page,stat,sizex,sizey,color,publish_at', 'safe', 'on' => 'manage,browse']
+            ['ua_id,cb_id,ns_id,cb_name,ns_name,sa_realname,page,stat,sizex,sizey,color,publish_at', 'safe', 'on' => 'manage,browse']
         );
     }
 
@@ -76,7 +76,7 @@ class CommBookingRequest extends ActiveRecord {
             'cb_name' => 'Iklan',
             'ns_name' => 'Section',
             'ua_username' => 'PIC',
-            'sa_username' => 'SIC'
+            'sa_realname' => 'Sales'
         );
     }
 
@@ -148,12 +148,17 @@ class CommBookingRequest extends ActiveRecord {
     {
         $criteria = new CDbCriteria();
         $criteria->together = true;
-        $criteria->with = ['cb', 'ns'];
+        $criteria->with = [
+            'cb' => [
+                'with' => ['sa']
+            ],
+            'ns'
+        ];
         $criteria->compare('t.id', $this->id, TRUE);
         $criteria->compare('t.cb_id', $this->cb_id, TRUE);
         $criteria->compare('ns.name', $this->ns_name, TRUE);
         $criteria->compare('ua.username', $this->ua_username, TRUE);
-        $criteria->compare('sa.username', $this->sa_username, TRUE);
+        $criteria->compare('sa.realname', $this->sa_realname, TRUE);
         $criteria->compare('t.page', $this->page, TRUE);
         $criteria->compare('t.stat', $this->stat, TRUE);
         $criteria->compare('t.sizex', $this->sizex, TRUE);
@@ -185,9 +190,9 @@ class CommBookingRequest extends ActiveRecord {
                         'asc'  => 'ua.username',
                         'desc' => 'ua.username DESC',
                     ),
-                    'sa_username' => array(
-                        'asc'  => 'sa.username',
-                        'desc' => 'sa.username DESC',
+                    'sa_realname' => array(
+                        'asc'  => 'sa.realname',
+                        'desc' => 'sa.realname DESC',
                     ),
                     'page' => array(
                         'asc'  => 't.page',

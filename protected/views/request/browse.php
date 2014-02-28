@@ -44,7 +44,7 @@ $(document).on("click", "#comm-booking-request-manage-grid table.items .update-r
             'name' => 'page'
         ],
         [
-            'name' => 'sa_username',
+            'name' => 'sa_realname',
             'value' => '$data->cb->sa->realname'
         ],
         [
