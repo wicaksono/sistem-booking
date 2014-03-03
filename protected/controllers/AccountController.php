@@ -38,6 +38,11 @@ class AccountController extends Controller
                 'actions' => ['index', 'logout']
             ),
             array(
+                'allow',
+                'users' => ['*'],
+                'actions' => ['error']
+            ),
+            array(
                 'deny',
                 'users' => ['*']
             )
@@ -119,7 +124,13 @@ class AccountController extends Controller
     }
 
     public function actionError()
-    {}
+    {
+        $error = Yii::app()->errorHandler->error;
+        if(Yii::app()->request->isAjaxRequest)
+            echo $error['message'];
+        else
+            $this->render('error', $error, FALSE, TRUE);
+    }
 
     public function actionLogin()
     {
