@@ -2,16 +2,13 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="<?php echo Yii::app()->request->baseUrl; ?>/assets/static/css/chosen.css" rel="stylesheet" type="text/css">
         <link href="<?php echo Yii::app()->request->baseUrl; ?>/assets/static/fonts/ubuntu.css" rel="stylesheet" type="text/css">
         <link href="<?php echo Yii::app()->request->baseUrl; ?>/assets/static/css/bootstrap.css" rel="stylesheet" type="text/css">
         <link href="<?php echo Yii::app()->request->baseUrl; ?>/assets/static/css/jquery-ui.css" rel="stylesheet" type="text/css">
         <link href="<?php echo Yii::app()->request->baseUrl; ?>/assets/static/css/select2.css" rel="stylesheet" type="text/css">
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/assets/static/js/jquery.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/assets/static/js/jquery-ui.js"></script>
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/assets/static/js/jquery.chosen.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/assets/static/js/jquery.select2.js"></script>
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/assets/static/js/jquery.ajax-chosen.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/assets/static/js/hogan.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/assets/static/js/bootstrap.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/assets/static/js/typeahead.js"></script>
