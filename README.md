@@ -1,5 +1,8 @@
 # Sistem Booking
 
+## System Configuration
+Konfigurasi httpd dan mysqld mengikuti standard umum, silakan dibaca manualnya [disini](http://nginx.org/en/docs/) dan [disini](http://dev.mysql.com/doc/refman/5.5/en/index.html).
+
 ## Developer Guideline
 
 ### Database UML
